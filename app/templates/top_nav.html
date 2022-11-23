@@ -1,0 +1,66 @@
+<script>
+  function displayForm(elem){
+   if(elem.value == "1" | elem.value == "2") {
+      document.getElementById('file_input').style.display = "none";
+      document.getElementById('arg1').style.display = "block";
+      document.getElementById('arg1_input_field').placeholder= "filepath";
+      document.getElementById('arg2').style.display = "none";
+      document.getElementById('submit_button').style.display = "block";
+
+    } else if (elem.value == "3" | elem.value == "4")  {
+      document.getElementById('file_input').style.display = "none";
+      document.getElementById('arg1').style.display = "block";
+      document.getElementById('arg1_input_field').placeholder= "filename";
+      document.getElementById('arg2').style.display = "none";
+      document.getElementById('submit_button').style.display = "block";
+    }
+    else if (elem.value == "5") {
+      document.getElementById('file_input').style.display = "block";
+      document.getElementById('arg1').style.display = "block";
+      document.getElementById('arg1_input_field').placeholder= "location";
+      document.getElementById('arg2').style.display = "block";
+      document.getElementById('arg2_input_field').placeholder= "k";
+      document.getElementById('submit_button').style.display = "block";
+    }
+    else {
+      document.getElementById('file_input').style.display = "none";
+      document.getElementById('arg1').style.display = "none";
+      document.getElementById('arg2').style.display = "none";
+      document.getElementById('submit_button').style.display = "none";
+    }
+  }
+</script>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+  <a class="nav-link d-inline-flex align-items-center me-4 mr-5" href="/" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+      <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+    </svg>
+  </a>
+  <div class="row mt-3 ml-3">
+    <p class="text-white">$ edfs</p>
+  </div>
+  <form class="form-inline" method="POST" name="edfs_command", enctype="multipart/form-data">
+      <div class="form-group ml-4">
+        <select class="form-control" aria-label="command select" id="command" name="command" onchange="displayForm(this)">
+          <option selected>Command</option>
+          <option value="1">mkdir</option>
+          <option value="2">ls</option>
+          <option value="3">rm</option>
+          <option value="4">cat</option>
+          <option value="5">put</option>
+        </select>
+    </div>
+        <div class="form-group ml-2" id="file_input" style="display: none">
+          <input type="file" id="file_input_field" name="file_input" class="form-control bg-dark text-white" placeholder="file"></input>
+        </div>
+        <div class="form-group ml-2" id="arg1" name="arg1" style="display: none">
+          <input type="text" id="arg1_input_field" name="arg1_input" class="form-control" placeholder="arg1"></input>
+        </div>
+        <div class="form-group ml-2" id="arg2" name="arg2" style="display: none">
+          <input type="text" id="arg2_input_field" class="form-control" name="arg2_input" placeholder="arg2"></input>
+        </div>
+          <button type="submit" value="submit" id="submit_button" style="display: none" name="submit_button" class="btn btn-primary ml-2">Execute</button>
+  </form>
+</nav>

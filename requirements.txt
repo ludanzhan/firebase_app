@@ -1,0 +1,6 @@
+Flask
+firebase_admin
+pandas
+flask-sqlalchemy
+sqlalchemy
+git+https://github.com/ozgur/python-firebase

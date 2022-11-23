@@ -1,0 +1,14 @@
+setup.py
+edfs/__init__.py
+edfs/commands.py
+edfs/firebase.py
+edfs/interface.py
+edfs/main.py
+edfs/pmr.py
+edfs/tools.py
+edfs.egg-info/PKG-INFO
+edfs.egg-info/SOURCES.txt
+edfs.egg-info/dependency_links.txt
+edfs.egg-info/entry_points.txt
+edfs.egg-info/top_level.txt
+edfs.egg-info/zip-safe
